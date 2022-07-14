@@ -1,0 +1,93 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<title>Login Page Gardener</title>
+</head>
+
+  
+<body class = "mainbody">
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Login</h3>
+			</div>
+			<div class="card-body">
+				<form #loginVendorForm="ngForm" class="form-group login" (ngSubmit)="loginSubmit(loginVendorForm.value)" novalidate>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="glyphicon glyphicon-user"></i></span>
+						</div>
+						<input id="vid" type="text" class="form-control" name="vid" placeholder="Vendor Id" [(ngModel)]='user.vid' required>
+						
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="glyphicon glyphicon-lock"></i></span>
+						</div>
+					<input id="pass" type="password" class="form-control" name="pass" placeholder="Password"  [(ngModel)]='user.pass' required>
+					</div>
+					<div class="form-group">
+					    <button class="btn btn-primary btn1" [disabled]="!loginVendorForm.valid">Login</button>
+					</div>
+			    </form>
+				
+			</div>
+        </div>
+    </div> 
+</div>   
+</body>
+</html> -->
+<!--Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html lang="zxx">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords" content="Modish Login Form Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+	<link href="//fonts.googleapis.com/css?family=Tangerine:400,700" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+
+<body>
+	<!-- title -->
+	<h1>
+		<span>V</span>endor
+		<span>P</span>ortal
+		<span>L</span>ogin
+	</h1>
+	<!-- //title -->
+
+	<!-- content -->
+	<div class="sub-main-w3">
+		<form #loginVendorForm="ngForm" class="login" (ngSubmit)="loginSubmit(loginVendorForm.value)" novalidate>
+			
+			<p class="legend">Login Here<span class="fa fa-hand-o-down"></span></p>
+			<div class="input">
+				<input id="vid" type="text" name="vid" placeholder="Vendor Id" [(ngModel)]='user.vid' required />
+				<span class="fa fa-user"></span>
+			</div>
+			<div class="input">
+				<input id="pass" type="password" name="pass" placeholder="Password"  [(ngModel)]='user.pass' required/>
+				<span class="fa fa-lock"></span>
+			</div>
+
+			<button type="submit" class="submit" [disabled]="!loginVendorForm.valid">
+				<i class="fa fa-sign-in"><span> Login</span></i>
+			</button>
+			<div class="top_link"><a href="#"><i class="fa fa-home"></i><span> HomePage</span></a></div>
+		</form>
+	</div>
+	<!-- //content -->
+
+	
+
+</body>
+
+</html>

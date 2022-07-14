@@ -1,0 +1,27 @@
+.title{
+    text-align: center;
+    color: white;
+    padding-top: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container{
+    background: none;
+}
+.profile{
+    background: none;
+    margin-top: 100px;
+}
+.col-md-4 {
+    margin-top: 37px;
+}
+.text-secondary {
+    color: #212529!important;
+}
+body{
+    background: #15457694;
+    margin-top: -50px;
+    margin-left: -30px;
+    margin-right: -30px;
+    /* margin-bottom: -500px; */
+    padding-bottom: 180px;
+}

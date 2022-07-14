@@ -1,0 +1,70 @@
+<h1 class="heading">Quotation</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+   <div>
+    <div *ngIf= "myVar == null" >
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead >
+            <tr class="bg-info text-white">
+                <th>S.No</th>
+                <th>Purchasing Document</th>
+                <th>Company Code</th>
+                <th>Document category</th>
+                <th>Status</th>
+                <th>Created on</th>
+                <th>Created By</th>
+                <th>Payment Terms</th>
+                <th>Purchasing Organization</th>
+                <th>Quotation Deadline</th>
+                <th>Exchange Rate</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="11" style="font-weight: bold;">
+                    No Data Found
+                </td>
+            </tr> 
+        </tbody>
+        </table>
+        </div>
+        <div *ngIf= "myVar != null">
+    <table  class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead >
+            <tr class="bg-info text-white">
+                <th>S.No</th>
+                <th>Purchasing Document</th>
+                <th>Company Code</th>
+                <th>Document category</th>
+                <th>Status</th>
+                <th>Created on</th>
+                <th>Created By</th>
+                <th>Payment Terms</th>
+                <th>Purchasing Organization</th>
+                <th>Quotation Deadline</th>
+                <th>Exchange Rate</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of items | filter: searchText; let i = index'>
+                 <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black;"><b>{{item.EBELN._text}}</b></td>
+                <td style="color: black"><b>{{item.BUKRS._text}}</b></td>
+                <td style="color: black"><b>{{item.BSTYP._text}}</b></td>
+                <td style="color: black;"><b>{{item.STATU._text}}</b></td>
+                <td style="color: black"><b>{{item.AEDAT._text}}</b></td>
+                <td style="color: black"><b>{{item.ERNAM._text}}</b></td>
+                <td style="color: black;"><b>{{item.ZTERM._text}}</b></td>
+                <td style="color: black"><b>{{item.EKORG._text}}</b></td>
+                <td style="color: black"><b>{{item.ANGDT._text}}</b></td>
+                <td style="color: black"><b>{{item.WKURS._text}}</b></td>
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>
+        </div>

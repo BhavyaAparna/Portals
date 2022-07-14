@@ -1,0 +1,40 @@
+<h1 class="heading">Invoice Data</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+ <table class="table table-bordered table-striped table-hover table-sm text-center">
+     <thead>
+         <tr class="bg-info text-white">
+         <th>S.No</th>
+         <th>Billing Document</th>
+         <th>Bill Type</th>
+         <th>Invoice List Type</th>
+         <th>Currency</th>
+         <th>Sales Organization</th>
+         <th>PO Number</th>
+         <th>Net Value</th>
+         <th>Payer</th>
+         <th>Transaction Number</th>
+         <th>Tax Amount</th>
+         
+     </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor='let item of items | filter: searchText; let i = index'>
+             <td style="color: black"><b>{{i+1}}</b></td>
+             <td style="color: black"><b>{{item.VBELN._text}}</b></td>
+             <td style="color: black;"><b>{{item.FKART._text}}</b></td>
+             <td style="color: black"><b>{{item.FKART_RL._text}}</b></td>
+             <td style="color: black;"><b>{{item.WAERK._text}}</b></td>
+             <td style="color: black"><b>{{item.VKORG._text}}</b></td>
+             <td style="color: black;"><b>{{item.BSTNK_VF._text}}</b></td>
+             <td style="color: black"><b>{{item.NETWR._text}}</b></td>
+             <td style="color: black;"><b>{{item.KUNRG._text}}</b></td>
+             <td style="color: black"><b>{{item.EXNUM._text}}</b></td>
+             <td style="color: black;"><b>{{item.MWSBK._text}}</b></td>
+         </tr>
+             
+     </tbody>
+     </table>
+     </div>

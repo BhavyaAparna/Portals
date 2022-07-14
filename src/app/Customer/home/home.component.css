@@ -1,0 +1,16 @@
+.texth1{
+    color: rgb(15, 11, 11);
+    font-family: "Georgia",serif;
+    font-weight: bold;
+    margin-left: 90px;
+}
+.page{
+    background-image: url("https://img.freepik.com/free-photo/3d-customer-survey-data-analysis-background-rendered-image_18199-176.jpg");
+    background-size: 100%;
+    /* padding: 326px; */
+    padding-top: 300px;
+    padding-bottom: 393px;
+    margin-left: -30px;
+    margin-top: -49px;
+    margin-right: -30px;
+}

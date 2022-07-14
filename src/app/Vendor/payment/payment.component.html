@@ -1,0 +1,44 @@
+<h1 class="heading">Payment and Aging</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+            <th>S.No</th>
+            <th>Company Code</th>
+            <th>Fiscal Year</th>
+            <th>Document Number</th>
+            <th>Item Number</th>
+            <th>Local Currency</th>
+            <th>Tax Code</th>
+            <th>Local Amount</th>
+            <th>Terms of Payment key </th>
+            <th>Net Payment Period</th>
+            <th>Reference Document Number</th>
+           
+            
+        </tr>
+        </thead>
+        <tbody>
+           
+            <tr *ngFor='let item of items | filter: searchText; let i = index'>
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item.COMP_CODE._text}}</b></td>
+                <td style="color: black"><b>{{item.FISC_YEAR._text}}</b></td>
+                <td style="color: black;"><b>{{item.DOC_NO._text}}</b></td>
+                <td style="color: black"><b>{{item.ITEM_NUM._text}}</b></td>
+                <td style="color: black"><b>{{item.LOC_CURRCY._text}}</b></td>
+                <td style="color: black;"><b>{{item.TAX_CODE._text}}</b></td>
+                <td style="color: black"><b>{{item.LC_AMOUNT._text}}</b></td>
+                <td style="color: black"><b>{{item.PMNTTRMS._text}}</b></td>
+                <td style="color: black;"><b>{{item.NETTERMS._text}}</b></td>
+                <td style="color: black"><b>{{item.REF_DOC._text}}</b></td>
+                
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

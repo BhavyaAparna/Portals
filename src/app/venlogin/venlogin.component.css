@@ -1,0 +1,9 @@
+.top_link a {
+    color: #f13f57;
+    font-weight: 400;
+    margin-left: 309px
+
+}
+.top_link a:hover{
+    color: white;
+}

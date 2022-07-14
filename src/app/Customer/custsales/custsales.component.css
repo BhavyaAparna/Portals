@@ -1,0 +1,18 @@
+.heading{
+    margin-bottom: 53px;
+    text-align: center;
+    font-family: "Georgia",serif;
+    color: red;
+}
+.bg-info {
+    background-color: #337ab7!important;
+}
+
+.searchBar{
+    margin-left: 1000px;
+    padding: 7px;
+    margin-top: -12px;
+    margin-bottom: 9px;
+    border-radius: 8px;
+    color: #212529;
+}

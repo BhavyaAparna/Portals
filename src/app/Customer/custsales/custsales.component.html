@@ -1,0 +1,74 @@
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<h1 class="heading">Sales Order Data</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div style="position: relative">
+<div class="modal fade" id="salesModel" role="dialog" data-backdrop="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              
+                <h4 class="modal-title">Sales Details</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-group">
+                     <p>Material Number: {{this.data.MATERIAL._text}}</p>
+                     <p>Name: {{this.data.NAME._text}}</p>
+                     <p>Item Number for SD Document: {{this.data.ITM_NUMBER._text}}</p>
+                     <p>Net Price: {{this.data.NET_PRICE._text}}</p>
+                     <p>Creation Date: {{this.data.CREATION_DATE._text}}</p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay"></div>
+
+</div>
+<div>
+ <table class="table table-bordered table-striped table-hover table-sm text-center">
+     <thead>
+         <tr class="bg-info text-white">
+         <th>S.No</th>
+         <th>Sales Document</th>
+         <th>Document Date</th>
+         <th>Status</th>
+         <th>Description</th>
+         <!-- <th>Valid From</th> -->
+         <th>Valid To</th>
+         <th>Sold to</th>
+         <th>Sales Organization</th>
+         <th>Exchange Rate</th>
+         <th>Required Quantity</th>
+         <!-- <th>Item Data</th> -->
+         
+     </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor="let item of items | filter: searchText; let i = index" (click)="showPopup(item)">
+             <td style="color: black"><b>{{i+1}}</b></td>
+             <td style="color: black"><b>{{item.SD_DOC._text}}</b></td>
+             <td style="color: black"><b>{{item.DOC_DATE._text}}</b></td>
+             <td style="color: black;"><b>{{item.DOC_STATUS._text}}</b></td>
+             <td style="color: black"><b>{{item.SHORT_TEXT._text}}</b></td>
+             <!-- <td style="color: black"><b>{{item.VALID_FROM._text}}</b></td> -->
+             <td style="color: black;"><b>{{item.VALID_TO._text}}</b></td>
+             <td style="color: black"><b>{{item.SOLD_TO._text}}</b></td>
+             <td style="color: black"><b>{{item.SALES_ORG._text}}</b></td>
+             <td style="color: black;"><b>{{item.EXCHG_RATE._text}}</b></td>
+             <td style="color: black"><b>{{item.REQ_QTY._text}}</b></td>
+             <!-- <td><button (click)="showPopup(item)" class="glyphicon glyphicon-pencil"></button> -->
+         </tr>
+             
+     </tbody>
+     </table>
+     </div>

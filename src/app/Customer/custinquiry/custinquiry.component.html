@@ -1,0 +1,84 @@
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<h1 class="heading">Inquiry Data</h1>
+<div  style="position: relative">
+    <div class="modal fade" id="inquiryModel" role="dialog" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  
+                    <h4 class="modal-title">Inquiry Details</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        <p>Document Number: {{this.final.VBELN._text}}</p>
+                        <p>Product Name: {{this.final.ARKTX._text}}</p>
+                        <p>Quantity: {{this.final.ZMENG._text}}</p>
+                        <p>Item Category: {{this.final.PSTYV._text}}</p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    
+    </div>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead class="text-center">
+            <tr class="bg-info text-white ">
+            <th>S.No</th>
+            <th>Document Number</th>
+            <th>Receipt Date</th>
+            <th>Valid From</th>
+            <th>Valid to</th>
+            <th>Document Date</th>
+            <th>Created By</th>
+            <th>Sales Organization</th>
+            <th>Currency</th>
+            <th>Document Category</th>
+            <th>Net Value</th>
+            <th>Sales Office</th>
+            
+            
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items | filter: searchText; let i = index " (click)="showPopup(item)">
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item['VBELN']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['ERDAT']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['ANGDT']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['BNDDT']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['AUDAT']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['ERNAM']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['VKORG']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['STWAE']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['VBTYP']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['NETWR']['_text']}}</b></td>
+                <td style="color: black"><b>{{item['VKBUR']['_text']}}</b></td>
+                <!-- <td style="color: black"><b>{{itemERDAT._text}}</b></td>
+                <td style="color: black"><b>{{item.ANGDT._text}}</b></td>
+                <td style="color: black"><b>{{item.BNDDT._text}}</b></td>
+                <td style="color: black"><b>{{item.AUDAT._text}}</b></td>
+                <td style="color: black"><b>{{item.ERNAM._text}}</b></td>
+                <td style="color: black"><b>{{item.VKORG._text}}</b></td>
+                <td style="color: black"><b>{{item.STWAE._text}}</b></td>
+                <td style="color: black"><b>{{item.VBTYP._text}}</b></td>
+                <td style="color: black"><b>{{item.NETWR._text}}</b></td>
+                <td style="color: black"><b>{{item.VKBUR._text}}</b></td> -->
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

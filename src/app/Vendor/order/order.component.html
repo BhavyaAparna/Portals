@@ -1,0 +1,81 @@
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<h1 class="heading">Purchase Orders</h1>
+<div style="position: relative">
+    <div class="modal fade" id="orderModel" role="dialog" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  
+                    <h4 class="modal-title">Purchase Order Details</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                      
+                      <p> Purchase Order: {{this.final.PO_NUMBER._text}}</p>
+                      <p> Material Number: {{this.final.PUR_MAT._text}}</p>
+                      <p> Purchasing Information Record: {{this.final.INFO_REC._text}}</p>
+                      <p> Product: {{this.final.SHORT_TEXT._text}}</p>
+                      <p> Net Price: {{this.final.NET_PRICE._text}}</p>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    
+    </div>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+            <th>S.No</th>
+            <th>Purchase Number</th>
+            <th>Purchase Organization</th>
+            <th>Purchasing Group</th>
+            <th>Company Code</th>
+            <th>Document Date</th>
+            <th>Document Type</th>
+            <th>Document Category</th>
+            <th>Status</th>
+            <th>Created on</th>
+            <th>Created By</th>
+            <th>Terms of Payment key</th>
+            <th>Exchange Rate</th>
+           
+            
+        </tr>
+        </thead>
+        <tbody>
+           
+            <tr *ngFor='let item of items | filter: searchText; let i = index' (click)="showPopup(item)">
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item.PO_NUMBER._text}}</b></td>
+                <td style="color: black"><b>{{item.PURCH_ORG._text}}</b></td>
+                <td style="color: black;"><b>{{item.PUR_GROUP._text}}</b></td>
+                <td style="color: black"><b>{{item.CO_CODE._text}}</b></td>
+                <td style="color: black"><b>{{item.DOC_DATE._text}}</b></td>
+                <td style="color: black;"><b>{{item.DOC_TYPE._text}}</b></td>
+                <td style="color: black"><b>{{item.DOC_CAT._text}}</b></td>
+                <td style="color: black"><b>{{item.STATUS._text}}</b></td>
+                <td style="color: black;"><b>{{item.CREATED_ON._text}}</b></td>
+                <td style="color: black"><b>{{item.CREATED_BY._text}}</b></td>
+                <td style="color: black"><b>{{item.PMNTTRMS._text}}</b></td>
+                <td style="color: black"><b>{{item.EXCH_RATE._text}}</b></td>
+                
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

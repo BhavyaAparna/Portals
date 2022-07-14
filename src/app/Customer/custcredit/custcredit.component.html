@@ -1,0 +1,43 @@
+<h1 class="heading">Credit Data</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+ <table class="table table-bordered table-striped table-hover table-sm text-center">
+     <thead>
+         <tr class="bg-info text-white">
+             <th>S.No</th>
+         <th>COMP_CODE</th>
+         <th>Document Number</th>
+         <th>Fiscal year</th>
+         <th>Fiscal period</th>
+         <th>Currency</th>
+         <th>Post Key</th>
+         <th>Entry Date</th>
+         <th>DB_CR_IND</th>
+         <th>Bill DOCument</th>
+         <th>AMOUNT</th>
+         <th>Base Line Data</th>
+         
+     </tr>
+     </thead>
+     <tbody>
+         <tr *ngFor='let item of items | slice: 1 | filter: searchText; let i = index'>
+             <td style="color: black"><b>{{i+1}}</b></td>
+             <td style="color: black"><b>{{item.COMP_CODE._text}}</b></td>
+             <td style="color: black"><b>{{item.DOC_NO._text}}</b></td>
+             <td style="color: black;"><b>{{item.FISC_YEAR._text}}</b></td>
+             <td style="color: black"><b>{{item.FIS_PERIOD._text}}</b></td>
+             <td style="color: black"><b>{{item.CURRENCY._text}}</b></td>
+             <td style="color: black;"><b>{{item.POST_KEY._text}}</b></td>
+             <td style="color: black"><b>{{item.ENTRY_DATE._text}}</b></td>
+             <td style="color: black"><b>{{item.DB_CR_IND._text}}</b></td>
+             <td style="color: black;"><b>{{item.BILL_DOC._text}}</b></td>
+             <td style="color: black"><b>{{item.AMOUNT._text}}</b></td>
+             <td style="color: black"><b>{{item.BLINE_DATE._text}}</b></td>
+            
+         </tr>
+             
+     </tbody>
+     </table>
+     </div>

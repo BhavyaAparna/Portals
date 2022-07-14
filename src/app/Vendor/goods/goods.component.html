@@ -1,0 +1,74 @@
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<h1 class="heading">Goods Receipt</h1>
+<div style="position: relative">
+    <div class="modal fade" id="goodsModel" role="dialog" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  
+                    <h4 class="modal-title">Goods Receipt Details</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        <!--this.data={MAT_DOC:'',MATERIAL:'',PLANT:'',STGE_LOC:'',ENTRY_QNT:'-->
+                        <p> Material Document Number: {{this.final.MAT_DOC._text}}</p>
+                        <p> Material Number: {{this.final.MATERIAL._text}}</p>
+                        <p> PLant: {{this.final.PLANT._text}}</p>
+                        <p> Storage Location: {{this.final.STGE_LOC._text}}</p>
+                        <p> Quantity: {{this.final.ENTRY_QNT._text}}</p>
+
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    
+    </div>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+            <th>S.No</th>
+            <th>Material Document Number</th>
+            <th>Document Year</th>
+            <th>Transaction/Event Type</th>
+            <th>Document Date</th>
+            <th>Posting Date</th>
+            <th>Entry Date</th>
+            <th>Entry Time</th>
+            <th>Username</th>
+            <th>Version of GR/GI Slip</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of items | slice: 1 | filter: searchText; let i = index' (click)="showPopup(item)">
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item.MAT_DOC._text}}</b></td>
+                <td style="color: black"><b>{{item.DOC_YEAR._text}}</b></td>
+                <td style="color: black;"><b>{{item.TR_EV_TYPE._text}}</b></td>
+                <td style="color: black"><b>{{item.DOC_DATE._text}}</b></td>
+                <td style="color: black"><b>{{item.PSTNG_DATE._text}}</b></td>
+                <td style="color: black;"><b>{{item.ENTRY_DATE._text}}</b></td>
+                <td style="color: black"><b>{{item.ENTRY_TIME._text}}</b></td>
+                <td style="color: black"><b>{{item.USERNAME._text}}</b></td>
+                <td style="color: black;"><b>{{item.VER_GR_GI_SLIP._text}}</b></td>
+                
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

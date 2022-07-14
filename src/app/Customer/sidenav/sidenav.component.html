@@ -1,0 +1,66 @@
+
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">C</button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Customer</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <div @fadeInOut *ngIf="!collapsed" >
+        <img class="imag1" src="https://media.glassdoor.com/sqll/443831/kaar-technologies-squarelogo-1407823308138.png">
+    </div>
+    <div @fadeInOut *ngIf="collapsed" >
+        <img class="imag" src="https://media.glassdoor.com/sqll/443831/kaar-technologies-squarelogo-1407823308138.png">
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" (click)="home()">
+            <a class="sidenav-nav-link" (click)="home()" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-home"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Home
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item" (click)="profile()">
+            <a class="sidenav-nav-link" (click)="profile()" routerLinkActive="active">
+                <i class="sidenav-link-icon" class="fa fa-user"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Profile
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item dropdown" >
+            <a class="sidenav-nav-link dropdown-toggle" data-toggle="dropdown"  routerLinkActive="active">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-list"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Dashboard
+                </span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="inquiry()"><i class="sidenav-link-icon" class="glyphicon glyphicon-ok-circle"></i> Inquiry</a>
+                <a class="dropdown-item" (click)="sales()"><i class="sidenav-link-icon" class="glyphicon glyphicon-shopping-cart"></i> Sales Order </a>
+                <a class="dropdown-item" (click)="delivery()"><i class="sidenav-link-icon" class="glyphicon glyphicon-send"></i> List of Delivery</a>
+              </div>
+        </li>
+        <li class="sidenav-nav-item dropdown" >
+            <a class="sidenav-nav-link dropdown-toggle" data-toggle="dropdown"  routerLinkActive="active">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-briefcase"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Financial Sheet
+                </span>
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" (click)="payments()"><i class="glyphicon glyphicon-paste"></i> Payment and Aging</a>
+                <a class="dropdown-item" (click)="invoice()"><i class="glyphicon glyphicon-list-alt"></i> Invoice</a>
+                <a class="dropdown-item" (click)="credit()"><i class="glyphicon glyphicon-credit-card"></i> Credit</a>
+                <a class="dropdown-item" (click)="debit()"><i class="glyphicon glyphicon-credit-card"></i> Debit</a>
+              </div>
+        </li>
+        <li class="sidenav-nav-itemf" (click)="logout()">
+            <a class="sidenav-nav-link" (click)="logout()" routerLinkActive="active">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-log-out"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Logout
+                </span>
+            </a>
+        </li>
+        
+    </ul>
+</div>

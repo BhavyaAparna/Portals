@@ -1,0 +1,86 @@
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+<h1 class="heading">List Of Delivery</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div style="position: relative">
+    <div class="modal fade" id="deliveryModel" role="dialog" data-backdrop="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  
+                    <h4 class="modal-title">Delivery Details</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        <!--this.final={VBELN:'',POSNR:'',ARKTX:'',LGORT: '',LFIMG: '',BRGEW: '',GEWEI: '',MBDAT: '',LGNUM: ''}-->
+                         <p>Delivery Number:{{ this.final.VBELN._text}}</p>
+                         <p>Delivery Item:{{this.final.POSNR._text}}</p>
+                         <p>Sales Order Item:{{this.final.ARKTX._text}}</p>
+                         <p>Storage Location:{{this.final.LGORT._text}}</p>
+                         <p>Actual Quantity Delivered:{{this.final.LFIMG._text}}</p>
+                         <p>Weight: {{this.final.BRGEW._text}} {{this.final.GEWEI._text}}</p>
+                         <p>Material Availability Date:{{this.final.MBDAT._text}}</p>
+                         <p>Ware House Number:{{this.final.LGNUM._text}}</p>
+                        <!--Enter Name: <input type="text" name="empName" [(ngModel)]="editObject.empName"
+                            class="form-control"><br />
+                        Enter Salary: <input type="number" name="salary" [(ngModel)]="editObject.salary"
+                            class="form-control"><br />
+                        Enter Gender: <input type="text" name="gender" [(ngModel)]="editObject.gender"
+                            class="form-control"><br />
+                        Enter Date of join: <input type="date" name="doj" [(ngModel)]="editObject.doj"
+                            class="form-control"><br />
+                        Enter Mobile: <input type="text" name="mobile" [(ngModel)]="editObject.mobile"
+                            class="form-control"><br />
+                        Enter Country: <input type="text" name="country" [(ngModel)]="editObject.country"
+                            class="form-control"><br /> -->
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-overlay"></div>
+    
+    </div>
+    <div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+            <th>S.No</th>
+            <th>Delivery</th>
+            <th>Created By</th>
+            <th>Entry Time</th>
+            <th>Shipping Point</th>
+            <th>Sales Organization</th>
+            <th>Delivery Type</th>
+            <th>Delivery Date</th>
+            <th>Ship to Party</th>
+                       
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of items | slice: 1 | filter: searchText ; let i = index' (click)="showPopup(item)">
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item.VBELN._text}}</b></td>
+                <td style="color: black"><b>{{item.ERNAM._text}}</b></td>
+                <td style="color: black;"><b>{{item.ERZET._text}}</b></td>
+                <td style="color: black"><b>{{item.VSTEL._text}}</b></td>
+                <td style="color: black"><b>{{item.VKORG._text}}</b></td>
+                <td style="color: black;"><b>{{item.LFART._text}}</b></td>
+                <td style="color: black"><b>{{item.LFDAT._text}}</b></td>
+                <td style="color: black"><b>{{item.KUNNR._text}}</b></td>
+               
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

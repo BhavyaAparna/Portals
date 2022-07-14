@@ -1,0 +1,55 @@
+<div class="sidenav" [ngClass]="collapsed ? 'sidenav-collapsed': ''">
+    <div class="logo-container">
+        <button class="logo" (click)="toggleCollapse()">E</button>
+        <div class="logo-text" @fadeInOut *ngIf="collapsed">Employee</div>
+        <button class="btn-close" @rotate *ngIf="collapsed" (click)="closeSidenav()">
+            <i class="fal fa-times close-icon"></i>
+        </button>
+    </div>
+    <div @fadeInOut *ngIf="!collapsed" >
+        <img class="imag1" src="https://media.glassdoor.com/sqll/443831/kaar-technologies-squarelogo-1407823308138.png">
+    </div>
+    <div @fadeInOut *ngIf="collapsed" >
+        <img class="imag" src="https://media.glassdoor.com/sqll/443831/kaar-technologies-squarelogo-1407823308138.png">
+    </div>
+    <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" (click)="home()">
+            <a class="sidenav-nav-link" (click)="home()" routerLinkActive="active"
+            [routerLinkActiveOptions]="{exact: true}">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-home"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Home
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item" (click)="profile()">
+            <a class="sidenav-nav-link" routerLinkActive="active" (click)="profile()">
+                <i class="sidenav-link-icon" class="fa fa-user"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Profile
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item" (click)="leave()">
+            <a class="sidenav-nav-link" routerLinkActive="active" (click)="leave()">
+                <i class="sidenav-link-icon" class="fa fa-business-time"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Leave Request
+                </span>
+            </a>
+        </li>
+        <li class="sidenav-nav-item" (click)="payslip()">
+            <a class="sidenav-nav-link" routerLinkActive="active" (click)="payslip()">
+                <i class="sidenav-link-icon" class="fa fa-money-bill-alt"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Pay Slip
+                </span>
+            </a>
+        </li>
+        
+        <li class="sidenav-nav-itemf" (click)="logout()">
+            <a class="sidenav-nav-link" (click)="logout()" routerLinkActive="active">
+                <i class="sidenav-link-icon" class="glyphicon glyphicon-log-out"></i>
+                <span class="sidenav-link-text" @fadeInOut *ngIf="collapsed">Logout
+                </span>
+            </a>
+        </li>
+        
+    </ul>
+</div>

@@ -1,0 +1,35 @@
+<h1 class="heading">Payslip</h1>
+<input type="button"  value="Download PDF" class="Download__btn" (click)="SavePDF()">
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+ <table class="table table-bordered table-striped table-hover table-sm text-center">
+     <thead>
+         <tr class="bg-info text-white">
+         <th>S.No</th>
+         <th>Sequence Number</th>
+         <th>Payroll for period</th>
+         <th>Initial Date</th>
+         <th>End Date</th>
+         <th>Date for Payroll Result</th>
+         <th>Payroll type Description</th>
+         
+     </tr>
+     </thead>
+     
+     <tbody>
+         <tr *ngFor='let item of items | filter: searchText; let i = index'>
+             <td style="color: black"><b>{{i+1}}</b></td>
+             <td style="color: black"><b>{{item.SEQUENCENUMBER._text}}</b></td>
+             <td style="color: black"><b>{{item.FPPERIOD._text}}</b></td>
+             <td style="color: black;"><b>{{item.FPBEGIN._text}}</b></td>
+             <td style="color: black"><b>{{item.FPEND._text}}</b></td>
+             <td style="color: black"><b>{{item.PAYDATE._text}}</b></td>
+             <td style="color: black;"><b>{{item.PAYTYPE_TEXT._text}}</b></td>
+             
+         </tr>
+             
+     </tbody>
+     </table>
+     </div>

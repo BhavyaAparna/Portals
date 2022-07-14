@@ -1,0 +1,45 @@
+<h1 class="heading">Invoice List</h1>
+<div class="form-group">
+    <input type="text" class="searchBar" placeholder="Search " [(ngModel)] ="searchText" >
+  </div>
+<div>
+   <div>
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+            <th>S.No</th>
+            <th>Material Number</th>
+            <th>Plant</th>
+            <th>Base Unit of Measure</th>
+            <th>Company Code</th>
+            <th>Accounting Document Number</th>
+            <th>Fiscal Year</th>
+            <th>Account Type</th>
+            <th>Amount in Local</th>
+            <th>Quanity</th>
+            <th>Transaction</th>
+            <th>Purchasing Document</th>
+            <th>Purchasing Item</th>  
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of items | filter: searchText; let i = index'>
+                <td style="color: black"><b>{{i+1}}</b></td>
+                <td style="color: black"><b>{{item.MATNR._text}}</b></td>
+                <td style="color: black"><b>{{item.WERKS._text}}</b></td>
+                <td style="color: black;"><b>{{item.MEINS._text}}</b></td>
+                <td style="color: black"><b>{{item.BUKRS._text}}</b></td>
+                <td style="color: black"><b>{{item.BELNR._text}}</b></td>
+                <td style="color: black;"><b>{{item.GJAHR._text}}</b></td>
+                <td style="color: black"><b>{{item.KOART._text}}</b></td>
+                <td style="color: black"><b>{{item.DMBTR._text}}</b></td>
+                <td style="color: black;"><b>{{item.MENGE._text}}</b></td>
+                <td style="color: black"><b>{{item.KTOSL._text}}</b></td>
+                <td style="color: black"><b>{{item.EBELN._text}}</b></td>
+                <td style="color: black"><b>{{item.EBELP._text}}</b></td>
+               
+            </tr>
+                
+        </tbody>
+        </table>
+        </div>

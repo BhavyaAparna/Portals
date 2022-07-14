@@ -1,0 +1,22 @@
+.title{
+    text-align: center;
+    color: black;
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.container{
+    background: none;
+}
+.profile{
+    background: none;
+    margin-top: 100px;
+}
+.col-md-4 {
+    margin-top: 37px;
+}
+.text-secondary {
+    color: #212529!important;
+}
+.card-body{
+    background: #19589636;
+}
